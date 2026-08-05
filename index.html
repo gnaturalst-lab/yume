@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- YUME DRONE UPDATE 2026-08-06 -->
 <html lang="ja">
 <head>
 <meta charset="utf-8">
@@ -218,6 +219,10 @@ p{
 .fact:last-child{border-right:0}
 .fact strong{display:block;font-size:17px;font-weight:400;margin-bottom:7px}
 .fact span{font-size:11px;line-height:1.7;color:#6d756d}
+.drone-overview{padding:64px 5.5vw;background:#101912}
+.drone-overview a{display:block;max-width:1500px;margin:auto;overflow:hidden}
+.drone-overview img{display:block;width:100%;height:auto;transition:transform .7s ease}
+.drone-overview a:hover img{transform:scale(1.012)}
 
 .dark{
   background:var(--green);
@@ -471,6 +476,7 @@ footer{
   .details{grid-template-columns:1fr}
   .facts-bar{grid-template-columns:1fr 1fr}
   .fact:nth-child(2n){border-right:0}
+  .drone-overview{padding:18px}
   .amenity-list{grid-template-columns:1fr 1fr}
   .moments{grid-template-columns:1fr}
   .moment{min-height:110vw}
@@ -546,6 +552,12 @@ footer{
   <div class="fact"><strong>無料駐車場</strong><span>5台以上駐車可能</span></div>
   <div class="fact"><strong>15:00 ／ 11:00</strong><span>チェックイン ／ アウト</span></div>
 </div>
+
+<section class="drone-overview" aria-label="貸別荘ゆめのドローン全景">
+  <a href="drone-overview.jpeg" target="_blank" rel="noopener" aria-label="ドローン全景を大きく見る">
+    <img src="drone-overview.jpeg" alt="森に囲まれた貸別荘ゆめの敷地と建物を上空から見たドローン全景">
+  </a>
+</section>
 
 <section class="intro reveal">
   <p class="kicker">THE STORY OF YUME</p>
