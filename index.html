@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="google-site-verification" content="OHev-JMW7fK9B1rxsDIJ9HKmNOfSD-_j8ZmIVWJkX7E">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="南伊豆の自然に囲まれた一日一組限定の一棟貸し、貸別荘ゆめ。約180㎡、和室3部屋・洋室1部屋、無料駐車場5台。">
+<meta name="description" content="南伊豆の自然に囲まれた一日一組限定の一棟貸し、貸別荘ゆめ。約183㎡、和室3部屋・洋室1部屋、無料駐車場5台以上。">
 <meta name="keywords" content="南伊豆,貸別荘,一棟貸し,貸別荘ゆめ,下田,家族旅行,無料駐車場">
 <title>貸別荘 ゆめ｜南伊豆の一棟貸し</title>
 
@@ -41,8 +41,8 @@ a{color:inherit}
   position:absolute;
   inset:0;
   background:
-    linear-gradient(90deg,rgba(8,17,12,.90) 0%,rgba(8,17,12,.67) 34%,rgba(8,17,12,.18) 67%,rgba(8,17,12,.08) 100%),
-    url('hero.jpg') center/cover no-repeat;
+    linear-gradient(90deg,rgba(8,17,12,.91) 0%,rgba(8,17,12,.69) 37%,rgba(8,17,12,.25) 70%,rgba(8,17,12,.12) 100%),
+    url('hero-living.jpg') center/cover no-repeat;
   z-index:-2;
   transform:scale(1.025);
   animation:heroZoom 12s ease-out both;
@@ -55,10 +55,11 @@ a{color:inherit}
   z-index:-1;
 }
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  padding:34px 5.5vw;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:32px;
+  padding:25px 3.5vw;
   position:relative;
   z-index:2;
 }
@@ -69,8 +70,8 @@ nav{
   gap:14px;
 }
 .brand-logo{
-  width:90px;
-  height:60px;
+  width:94px;
+  height:64px;
   object-fit:contain;
   background:#f4f1e8;
   border-radius:2px;
@@ -89,6 +90,12 @@ nav{
   letter-spacing:.28em;
   opacity:.82;
 }
+.nav-links{display:flex;justify-content:center;gap:25px;white-space:nowrap}
+.nav-links a{font-size:12px;letter-spacing:.1em;text-decoration:none;padding:9px 0;border-bottom:1px solid transparent}
+.nav-links a:hover{border-color:rgba(255,255,255,.85)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.book-nav{background:linear-gradient(135deg,#d8b15a,#b78935);padding:14px 20px;text-decoration:none;text-align:center;min-width:135px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.book-nav small{display:block;font-size:9px;margin-top:3px;opacity:.9}
 .language{
   font-size:12px;
   letter-spacing:.12em;
@@ -110,8 +117,8 @@ nav{
   flex-direction:column;
   justify-content:center;
   align-items:flex-start;
-  padding:5vh 5.5vw 12vh;
-  max-width:900px;
+  padding:5vh 3.5vw 12vh;
+  max-width:780px;
 }
 .eyebrow{
   font-size:11px;
@@ -120,7 +127,7 @@ nav{
   opacity:.82;
 }
 h1{
-  font-size:clamp(52px,7.2vw,108px);
+  font-size:clamp(52px,5.6vw,82px);
   font-weight:400;
   letter-spacing:.08em;
   line-height:1.22;
@@ -134,10 +141,11 @@ h1{
   max-width:620px;
   text-shadow:0 2px 16px rgba(0,0,0,.42);
 }
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 .btn{
   display:inline-flex;
   align-items:center;
-  gap:36px;
+  gap:28px;
   margin-top:38px;
   padding:18px 24px;
   background:rgba(255,255,255,.94);
@@ -148,6 +156,19 @@ h1{
   transition:.35s ease;
   border:1px solid rgba(255,255,255,.8);
 }
+.hero-actions .btn{min-width:190px;justify-content:space-between}
+.hero-actions .btn:first-child{background:#203d2a;color:#fff;border-color:#315b3e}
+.hero-actions .btn:first-child:hover{background:#2a4c35}
+.btn.secondary{background:rgba(255,252,244,.93);color:#2a302b;border-color:rgba(255,255,255,.8)}
+.btn.secondary:hover{background:#fff;color:#172019}
+.netflix-badge{
+  position:absolute;right:4.5vw;bottom:5.5vh;width:142px;height:142px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  background:rgba(20,43,27,.88);border:1px solid rgba(255,255,255,.8);box-shadow:0 12px 35px rgba(0,0,0,.24)
+}
+.netflix-badge b{font:700 45px Arial;color:#e50914;line-height:.9}
+.netflix-badge strong{font-size:19px;font-weight:400;margin-top:7px}
+.netflix-badge small{font-size:9px;margin-top:6px;opacity:.85}
 .btn:hover{
   background:transparent;
   color:#fff;
@@ -391,17 +412,19 @@ footer{
   .hero::before{
     background:
       linear-gradient(180deg,rgba(6,14,9,.28),rgba(6,14,9,.78)),
-      url('hero.jpg') 56% center/cover no-repeat;
+      url('hero-living.jpg') 58% center/cover no-repeat;
   }
-  nav{padding:24px 6vw}
+  nav{grid-template-columns:1fr auto;padding:18px 5vw}
+  .nav-links{display:none}
+  .nav-right{gap:8px}
+  .book-nav{min-width:auto;padding:11px 12px;font-size:11px}
   .brand{gap:9px}
   .brand-logo{width:66px;height:44px}
   .brand-ja{font-size:19px}
   .brand-en{font-size:8px}
-  .language{font-size:10px}
-  .language a{margin-left:10px}
+  .language{display:none}
   .hero-copy{
-    padding:4vh 7vw 12vh;
+    padding:4vh 7vw 16vh;
     justify-content:flex-end;
   }
   .eyebrow{
@@ -421,6 +444,11 @@ footer{
     padding:16px 20px;
     gap:22px;
   }
+  .hero-actions{display:grid;width:100%}
+  .hero-actions .btn{width:100%;min-width:0;margin-top:0}
+  .hero-actions .btn:first-child{margin-top:30px}
+  .netflix-badge{width:102px;height:102px;right:5vw;bottom:3vh}
+  .netflix-badge b{font-size:30px}.netflix-badge strong{font-size:14px}.netflix-badge small{font-size:7px}
   .scroll{display:none}
   section{padding:82px 7vw}
   .section-head{display:block}
@@ -472,7 +500,7 @@ footer{
 </head>
 
 <body>
-<header class="hero">
+<header class="hero" id="top">
   <nav>
     <div class="brand">
       <img class="brand-logo" src="yume-logo.png" alt="貸別荘ゆめ ロゴ">
@@ -481,31 +509,42 @@ footer{
         <span class="brand-en">YUME PRIVATE VILLA · MINAMI-IZU</span>
       </div>
     </div>
-    <div class="language">
-      <a href="index.html">日本語</a>
-      <a href="en.html">English</a>
-      <a href="zh-tw.html">繁體中文</a>
+    <div class="nav-links" aria-label="主要メニュー">
+      <a href="#top">トップ</a>
+      <a href="#floor">館内案内</a>
+      <a href="#amenities">設備・アメニティ</a>
+      <a href="#gallery">ギャラリー</a>
+      <a href="#access">アクセス</a>
+    </div>
+    <div class="nav-right">
+      <a class="book-nav" href="https://www.booking.com/Share-i6wj1x" target="_blank" rel="noopener">ご予約<small>Booking.com</small></a>
+      <div class="language">
+        <a href="index.html">JP</a><a href="en.html">EN</a><a href="zh-tw.html">繁體</a>
+      </div>
     </div>
   </nav>
 
   <div class="hero-copy">
-    <p class="eyebrow">ONE PRIVATE VILLA IN MINAMI-IZU</p>
+    <p class="eyebrow">一日一組限定の一棟貸し</p>
     <h1>心が帰る<br>場所へ。</h1>
     <p class="hero-lead">
-      緑に包まれた、一日一組限定の一棟貸し。<br>
-      大切な人と、静かな時間をお過ごしください。
+      南伊豆の自然に包まれた、約183㎡の平屋。<br>
+      家族や仲間と過ごす、静かで特別な時間を。
     </p>
-    <a class="btn" href="https://www.booking.com/Share-i6wj1x" target="_blank" rel="noopener">
-      <span>空室・料金を見る</span><span>→</span>
-    </a>
+    <div class="hero-actions">
+      <a class="btn" href="https://www.booking.com/Share-i6wj1x" target="_blank" rel="noopener"><span>ご予約</span><span>→</span></a>
+      <a class="btn secondary" href="#floor"><span>館内案内</span><span>↓</span></a>
+      <a class="btn secondary" href="#gallery"><span>ギャラリー</span><span>↓</span></a>
+    </div>
   </div>
 
+  <div class="netflix-badge" aria-label="Netflixをご利用いただけます"><b>N</b><strong>Netflix</strong><small>ご利用いただけます</small></div>
   <span class="scroll">SCROLL</span>
 </header>
 
 <div class="facts-bar">
   <div class="fact"><strong>一日一組限定</strong><span>一棟すべてを完全貸切</span></div>
-  <div class="fact"><strong>約180㎡の平屋</strong><span>和室3室・洋室1室</span></div>
+  <div class="fact"><strong>約183㎡の平屋</strong><span>和室3室・洋室1室</span></div>
   <div class="fact"><strong>推奨8名様まで</strong><span>最大10名様</span></div>
   <div class="fact"><strong>無料駐車場</strong><span>5台以上駐車可能</span></div>
   <div class="fact"><strong>15:00 ／ 11:00</strong><span>チェックイン ／ アウト</span></div>
@@ -516,7 +555,7 @@ footer{
   <h2>ここにしかない、<br>静けさがあります。</h2>
   <p>
     「貸別荘 ゆめ」は、南伊豆の豊かな自然に囲まれた一棟貸しの宿です。
-    約180㎡のゆとりある平屋に、和室3部屋と洋室1部屋をご用意しました。
+    約183㎡のゆとりある平屋に、和室3部屋と洋室1部屋をご用意しました。
     鳥のさえずりで目を覚まし、木漏れ日の中で語らい、夜には満天の星空を見上げる。
     ここには、「何もしない贅沢」があります。
   </p>
@@ -535,7 +574,7 @@ footer{
   </div>
 </section>
 
-<section class="amenities">
+<section class="amenities" id="amenities">
   <div class="intro reveal">
     <p class="kicker">COMFORT & AMENITIES</p>
     <h2>長い滞在にも、<br>心地よい備え。</h2>
@@ -553,7 +592,7 @@ footer{
   </div>
 </section>
 
-<section class="dark">
+<section class="dark" id="gallery">
   <div class="section-head reveal">
     <div>
       <p class="kicker">STAY & EXPERIENCE</p>
@@ -625,7 +664,7 @@ footer{
   </div>
 </section>
 
-<section class="dark">
+<section class="dark" id="floor">
   <div class="info feature reverse reveal">
     <div class="feature-copy">
       <p class="number">02 · FLOOR GUIDE</p>
@@ -639,7 +678,7 @@ footer{
   </div>
 </section>
 
-<section class="info">
+<section class="info" id="access">
   <div class="feature reveal">
     <div class="feature-copy">
       <p class="number">03 · ACCESS</p>
