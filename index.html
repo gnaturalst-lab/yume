@@ -161,14 +161,6 @@ h1{
 .hero-actions .btn:first-child:hover{background:#2a4c35}
 .btn.secondary{background:rgba(255,252,244,.93);color:#2a302b;border-color:rgba(255,255,255,.8)}
 .btn.secondary:hover{background:#fff;color:#172019}
-.netflix-badge{
-  position:absolute;right:4.5vw;bottom:5.5vh;width:142px;height:142px;border-radius:50%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  background:rgba(20,43,27,.88);border:1px solid rgba(255,255,255,.8);box-shadow:0 12px 35px rgba(0,0,0,.24)
-}
-.netflix-badge b{font:700 45px Arial;color:#e50914;line-height:.9}
-.netflix-badge strong{font-size:19px;font-weight:400;margin-top:7px}
-.netflix-badge small{font-size:9px;margin-top:6px;opacity:.85}
 .btn:hover{
   background:transparent;
   color:#fff;
@@ -297,6 +289,10 @@ p{
 }
 .feature.reverse{grid-template-columns:.94fr 1.06fr}
 .feature.reverse .feature-copy{order:2}
+.feature.full-media{display:block;max-width:1400px;margin:auto}
+.feature.full-media .feature-copy{max-width:900px;margin:0 auto 48px;text-align:center}
+.feature.full-media .details{max-width:720px;margin:30px auto 0}
+.feature.full-media img{display:block;width:100%;height:auto;margin:auto;object-fit:contain}
 .feature img{
   width:100%;
   height:auto;
@@ -449,8 +445,6 @@ footer{
   .hero-actions{display:grid;width:100%}
   .hero-actions .btn{width:100%;min-width:0;margin-top:0}
   .hero-actions .btn:first-child{margin-top:30px}
-  .netflix-badge{width:102px;height:102px;right:5vw;bottom:3vh}
-  .netflix-badge b{font-size:30px}.netflix-badge strong{font-size:14px}.netflix-badge small{font-size:7px}
   .scroll{display:none}
   section{padding:82px 7vw}
   .section-head{display:block}
@@ -471,6 +465,7 @@ footer{
     gap:38px;
   }
   .feature.reverse .feature-copy{order:0}
+  .feature.full-media .feature-copy{margin-bottom:30px;text-align:left}
   .feature img{height:76vw}
   .feature img,.feature img.map{height:auto;max-height:none;object-fit:contain}
   .details{grid-template-columns:1fr}
@@ -541,7 +536,6 @@ footer{
     </div>
   </div>
 
-  <div class="netflix-badge" aria-label="Netflixをご利用いただけます"><b>N</b><strong>Netflix</strong><small>ご利用いただけます</small></div>
   <span class="scroll">SCROLL</span>
 </header>
 
@@ -668,7 +662,7 @@ footer{
 </section>
 
 <section class="dark" id="floor">
-  <div class="info feature reverse reveal">
+  <div class="info feature full-media reveal">
     <div class="feature-copy">
       <p class="number">02 · FLOOR GUIDE</p>
       <h2>広さを、<br>自由に楽しむ。</h2>
@@ -682,7 +676,7 @@ footer{
 </section>
 
 <section class="info" id="access">
-  <div class="feature reveal">
+  <div class="feature full-media reveal">
     <div class="feature-copy">
       <p class="number">03 · ACCESS</p>
       <h2>南伊豆を楽しむ、<br>静かな拠点。</h2>
