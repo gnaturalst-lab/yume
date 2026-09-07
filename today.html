@@ -62,9 +62,9 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
 
 <script>
 (function(){
-  const parts = new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'long',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+  const parts = new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'numeric',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
   const v = Object.fromEntries(parts.map(p=>[p.type,p.value]));
-  document.getElementById('todayDate').textContent = `${v.year}年${v.month}${v.day}日（${v.weekday}） 本日のご案内`;
+  document.getElementById('todayDate').textContent = `${v.year}年${v.month}月${v.day}日（${v.weekday}） 本日のご案内`;
   const hour = Number(v.hour);
   const button = document.getElementById('reserveButton');
   if(hour >= 22){
