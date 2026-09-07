@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>本日限定・当日割｜貸別荘 ゆめ｜南伊豆</title>
+<meta name="description" content="南伊豆の貸別荘ゆめ。本日空室がある場合のみ、公式サイト限定の当日割をご案内します。8名様まで48,000円、19時以降40,000円。受付は22時まで。">
+<link rel="canonical" href="https://gnaturalst-lab.github.io/yume/today.html">
+<meta property="og:title" content="本日限定・当日割｜貸別荘 ゆめ">
+<meta property="og:description" content="南伊豆で今夜の宿をお探しの方へ。本日空室がある場合のみ、公式サイト限定価格でご案内します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gnaturalst-lab.github.io/yume/today.html">
+<meta property="og:image" content="https://gnaturalst-lab.github.io/yume/hero-living.jpg">
+<style>
+:root{--ink:#172019;--green:#203126;--cream:#f4f1e8;--gold:#b78935;--white:#fff;--muted:#6d756d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;letter-spacing:.04em}
+a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(9,20,13,.15),rgba(9,20,13,.76)),url('hero-living.jpg') center/cover no-repeat}.top-inner{width:min(1100px,90vw);margin:0 auto;padding:44px 0 58px}.brand{font-size:14px;letter-spacing:.18em;margin-bottom:28px;opacity:.92}.eyebrow{font-size:12px;letter-spacing:.28em;margin-bottom:16px}.top h1{font-weight:400;font-size:clamp(44px,7vw,82px);line-height:1.25;margin:0 0 20px}.lead{font-size:16px;line-height:2;max-width:720px}.wrap{width:min(980px,90vw);margin:0 auto;padding:72px 0}.offer{background:#fff;padding:42px;border:1px solid rgba(23,32,25,.12);box-shadow:0 18px 50px rgba(23,32,25,.06);text-align:center}.date{font-size:14px;color:var(--muted);margin-bottom:14px}.price-label{font-size:13px;letter-spacing:.16em;color:var(--muted)}.price{font-size:clamp(46px,8vw,82px);line-height:1.15;margin:8px 0 8px}.price small{font-size:.34em;margin-left:6px}.subprice{font-size:17px;line-height:1.9;margin-top:16px}.badge{display:inline-block;padding:8px 14px;border:1px solid rgba(183,137,53,.5);color:#73551d;background:#fbf4e4;font-size:12px;letter-spacing:.08em;margin-bottom:20px}.status{margin-top:18px;font-size:14px}.notice{margin:34px auto 0;max-width:760px;text-align:left;border-top:1px solid rgba(23,32,25,.16);padding-top:26px}.notice p{font-size:14px;line-height:2;margin:7px 0}.cta{display:inline-flex;align-items:center;justify-content:center;margin-top:30px;padding:16px 26px;background:var(--green);color:#fff;text-decoration:none;min-width:260px}.cta.disabled{opacity:.48;pointer-events:none}.section{padding:54px 0 0}.section h2{font-size:32px;font-weight:400;margin:0 0 20px}.section p{line-height:2;margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}.card{background:#ede8dc;padding:22px}.card strong{display:block;font-weight:400;font-size:17px;margin-bottom:8px}.card span{font-size:13px;line-height:1.8;color:var(--muted)}.back{display:inline-block;margin-top:42px}.footer{background:#101912;color:#fff;padding:28px 5vw;font-size:11px;letter-spacing:.12em}@media(max-width:700px){.top{min-height:56vh}.offer{padding:30px 20px}.grid{grid-template-columns:1fr}.wrap{padding:52px 0}.cta{width:100%}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">貸別荘 ゆめ · YUME PRIVATE VILLA · MINAMI-IZU</div>
+    <div class="eyebrow">OFFICIAL SITE · SAME-DAY OFFER</div>
+    <h1>本日限定・当日割</h1>
+    <p class="lead">本日、空室がある場合に限りご利用いただける、公式サイト限定の特別プランです。南伊豆で今夜の宿をお探しの方へ、一日一組限定の貸別荘「ゆめ」を当日限定価格でご案内します。</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="offer">
+    <div class="badge">空室がある日のみ実施</div>
+    <div class="date" id="todayDate">本日のご案内</div>
+    <div class="price-label" id="priceLabel">本日限定価格・8名様まで</div>
+    <div class="price" id="priceValue">48,000<small>円（税込）</small></div>
+    <div class="subprice" id="latePrice">19:00以降は <strong>40,000円（税込）</strong></div>
+    <div class="status" id="statusText">受付は本日22:00まで</div>
+    <a class="cta disabled" id="reserveButton" href="#" aria-disabled="true">当日予約はこちら（連絡先設定中）</a>
+
+    <div class="notice">
+      <p>・9〜10名様は、1名につき5,500円の追加料金を頂戴します。</p>
+      <p>・当日割は公式サイトからの直接予約限定です。</p>
+      <p>・Booking.comでは当日予約を受け付けていません。</p>
+      <p>・空室状況によりご案内できない場合があります。</p>
+      <p>・繁忙期・特定日は対象外となる場合があります。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>今夜、南伊豆でゆっくり。</h2>
+    <p>約180㎡の平屋を一棟貸切。和室3室・洋室1室、キッチン、Wi-Fi、無料BBQグリル、無料駐車場最大5台をご利用いただけます。</p>
+    <div class="grid">
+      <div class="card"><strong>一日一組限定</strong><span>一棟すべてを完全貸切でご利用いただけます。</span></div>
+      <div class="card"><strong>推奨8名様まで</strong><span>9〜10名様は追加料金にて対応可能です。</span></div>
+      <div class="card"><strong>南伊豆の拠点に</strong><span>下田・弓ヶ浜・下賀茂方面へアクセスしやすい立地です。</span></div>
+    </div>
+    <a class="back" href="index.html">← 貸別荘ゆめ 公式サイトへ戻る</a>
+  </section>
+</main>
+
+<footer class="footer">© YUME PRIVATE VILLA · MINAMI-IZU</footer>
+
+<script>
+(function(){
+  const parts = new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'long',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+  const v = Object.fromEntries(parts.map(p=>[p.type,p.value]));
+  document.getElementById('todayDate').textContent = `${v.year}年${v.month}${v.day}日（${v.weekday}） 本日のご案内`;
+  const hour = Number(v.hour);
+  if(hour >= 22){
+    document.getElementById('priceLabel').textContent='本日の受付は終了しました';
+    document.getElementById('priceValue').innerHTML='受付終了';
+    document.getElementById('latePrice').textContent='翌日のご予約は通常予約ページをご確認ください。';
+    document.getElementById('statusText').textContent='当日割受付時間 0:00〜22:00';
+  } else if(hour >= 19){
+    document.getElementById('priceLabel').textContent='19:00以降・本日限定価格・8名様まで';
+    document.getElementById('priceValue').innerHTML='40,000<small>円（税込）</small>';
+    document.getElementById('latePrice').textContent='本日22:00まで受付';
+  }
+})();
+</script>
+</body>
+</html>
