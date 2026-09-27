@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>本日限定・当日割｜貸別荘 ゆめ｜南伊豆</title>
-<meta name="description" content="南伊豆の貸別荘ゆめ。本日空室がある場合のみ、公式サイト限定の当日割をご案内します。8名様まで48,000円、19時以降40,000円。受付は22時まで。">
+<meta name="description" content="南伊豆の貸別荘ゆめ。本日空室がある場合のみ、公式サイト限定の当日割をご案内します。2026年10月〜2027年1月、8名様まで一棟1泊39,800円（税込・清掃費込み）。連休・年末年始は対象外。受付は22時まで。">
 <link rel="canonical" href="https://gnaturalst-lab.github.io/yume/today.html">
 <meta property="og:title" content="本日限定・当日割｜貸別荘 ゆめ">
 <meta property="og:description" content="南伊豆で今夜の宿をお探しの方へ。本日空室がある場合のみ、公式サイト限定価格でご案内します。">
@@ -29,11 +29,11 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
 
 <main class="wrap">
   <section class="offer">
-    <div class="badge">空室がある日のみ実施</div>
+    <div class="badge">2026年10月〜2027年1月・当日空室限定</div>
     <div class="date" id="todayDate">本日のご案内</div>
-    <div class="price-label" id="priceLabel">本日限定価格・8名様まで</div>
-    <div class="price" id="priceValue">48,000<small>円（税込）</small></div>
-    <div class="subprice" id="latePrice">19:00以降は <strong>40,000円（税込）</strong></div>
+    <div class="price-label" id="priceLabel">一棟1泊・8名様まで</div>
+    <div class="price" id="priceValue">39,800<small>円（税込）</small></div>
+    <div class="subprice" id="latePrice">清掃費込み・19:00以降も同じ料金です</div>
     <div class="status" id="statusText">受付は本日22:00まで</div>
     <a class="cta" id="reserveButton" href="https://lin.ee/O4UHZvC" target="_blank" rel="noopener">LINEで当日予約する</a>
 
@@ -42,7 +42,8 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
       <p>・当日割は公式サイトからの直接予約限定です。</p>
       <p>・Booking.comでは当日予約を受け付けていません。</p>
       <p>・空室状況によりご案内できない場合があります。</p>
-      <p>・繁忙期・特定日は対象外となる場合があります。</p>
+      <p>・対象期間：2026年10月1日〜2027年1月31日のご宿泊。連休・年末年始は対象外です。</p>
+      <p>・対象日・空室・受入準備をLINEで確認後、ご予約を確定します。</p>
     </div>
   </section>
 
@@ -67,7 +68,12 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
   document.getElementById('todayDate').textContent = `${v.year}年${v.month}月${v.day}日（${v.weekday}） 本日のご案内`;
   const hour = Number(v.hour);
   const button = document.getElementById('reserveButton');
-  if(hour >= 22){
+  const dateKey = `${v.year}-${v.month.padStart(2,'0')}-${v.day.padStart(2,'0')}`;
+  if(dateKey < '2026-10-01' || dateKey > '2027-01-31'){
+    document.getElementById('priceLabel').textContent='期間限定プラン・一棟1泊・8名様まで';
+    document.getElementById('statusText').textContent='本日は対象期間外です。対象期間：2026年10月1日〜2027年1月31日（連休・年末年始を除く）';
+    button.textContent='LINEでプランについて問い合わせる';
+  } else if(hour >= 22){
     document.getElementById('priceLabel').textContent='本日の受付は終了しました';
     document.getElementById('priceValue').innerHTML='受付終了';
     document.getElementById('latePrice').textContent='翌日のご予約は通常予約ページをご確認ください。';
@@ -77,10 +83,6 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
     button.setAttribute('aria-disabled','true');
     button.removeAttribute('href');
     button.removeAttribute('target');
-  } else if(hour >= 19){
-    document.getElementById('priceLabel').textContent='19:00以降・本日限定価格・8名様まで';
-    document.getElementById('priceValue').innerHTML='40,000<small>円（税込）</small>';
-    document.getElementById('latePrice').textContent='本日22:00まで受付';
   }
 })();
 </script>
