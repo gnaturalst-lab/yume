@@ -72,7 +72,10 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
   const button = document.getElementById('reserveButton');
   const dateKey = `${v.year}-${v.month.padStart(2,'0')}-${v.day.padStart(2,'0')}`;
   const isWeekend = v.weekday === '土' || v.weekday === '日';
-  if(dateKey < '2026-10-01' || dateKey > '2027-01-31' || isWeekend){
+  // 期間内の祝日・祝前日と年末年始は当日割の対象外。
+  const excludedDates = new Set(['2026-10-12','2026-11-02','2026-11-03','2026-11-23','2027-01-01','2027-01-11']);
+  const isYearEnd = dateKey >= '2026-12-26' && dateKey <= '2027-01-03';
+  if(dateKey < '2026-10-01' || dateKey > '2027-01-31' || isWeekend || excludedDates.has(dateKey) || isYearEnd){
     document.getElementById('priceLabel').textContent='平日当日割の対象外';
     document.getElementById('priceValue').textContent='対象外';
     document.getElementById('latePrice').textContent='平日の空室日に限る特別プランです。通常プランはお問い合わせください。';
