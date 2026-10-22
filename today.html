@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>本日限定・当日割｜貸別荘 ゆめ｜南伊豆</title>
-<meta name="description" content="南伊豆の貸別荘ゆめ。本日空室がある場合のみ、公式サイト限定の当日割をご案内します。2026年10月〜2027年1月、8名様まで一棟1泊39,800円（税込・清掃費込み）。連休・年末年始は対象外。受付は22時まで。">
+<meta name="description" content="南伊豆の貸別荘ゆめ。本日空室がある場合のみ、公式サイト限定の当日割をご案内します。2026年10月〜2027年1月の平日当日空室限定、大人2名様まで一棟1泊25,800円（税込・清掃費込み）。7歳以上は追加1名5,500円、6歳以下は宿泊・寝具無料。祝日・祝前日・連休・年末年始は対象外。受付は22時まで。">
 <link rel="canonical" href="https://gnaturalst-lab.github.io/yume/today.html">
 <meta property="og:title" content="本日限定・当日割｜貸別荘 ゆめ">
 <meta property="og:description" content="南伊豆で今夜の宿をお探しの方へ。本日空室がある場合のみ、公式サイト限定価格でご案内します。">
@@ -23,26 +23,28 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
     <div class="brand">貸別荘 ゆめ · YUME PRIVATE VILLA · MINAMI-IZU</div>
     <div class="eyebrow">OFFICIAL SITE · SAME-DAY OFFER</div>
     <h1>本日限定・当日割</h1>
-    <p class="lead">本日、空室がある場合に限りご利用いただける、公式サイト限定の特別プランです。南伊豆で今夜の宿をお探しの方へ、一日一組限定の貸別荘「ゆめ」を当日限定価格でご案内します。</p>
+    <p class="lead">平日の本日、空室がある場合に限りご利用いただける、公式サイト限定の特別プランです。大人2名様から、お子様連れのご家族にも。南伊豆の一棟貸切を当日限定価格でご案内します。</p>
   </div>
 </header>
 
 <main class="wrap">
   <section class="offer">
-    <div class="badge">2026年10月〜2027年1月・当日空室限定</div>
+    <div class="badge">2026年10月〜2027年1月・平日当日空室限定</div>
     <div class="date" id="todayDate">本日のご案内</div>
-    <div class="price-label" id="priceLabel">一棟1泊・8名様まで</div>
-    <div class="price" id="priceValue">39,800<small>円（税込）</small></div>
-    <div class="subprice" id="latePrice">清掃費込み・19:00以降も同じ料金です</div>
+    <div class="price-label" id="priceLabel">平日当日限定・一棟1泊・大人2名様まで</div>
+    <div class="price" id="priceValue">25,800<small>円（税込）</small></div>
+    <div class="subprice" id="latePrice">清掃費込み・3名様から7歳以上1名追加につき＋5,500円（税込）<br>6歳以下のお子様は宿泊・お布団ともに無料</div>
     <div class="status" id="statusText">受付は本日22:00まで</div>
     <a class="cta" id="reserveButton" href="https://lin.ee/O4UHZvC" target="_blank" rel="noopener">LINEで当日予約する</a>
 
     <div class="notice">
-      <p>・9〜10名様は、1名につき5,500円の追加料金を頂戴します。</p>
+      <p>・大人2名様25,800円／3名様31,300円／4名様36,800円／8名様58,800円（いずれも税込・清掃費込み）。</p>
+      <p>・追加料金は7歳以上の方が対象です。6歳以下のお子様は宿泊料金・お布団とも無料です（寝具は備え付けの数量内、要事前連絡）。</p>
+      <p>・ご利用人数はお子様を含めてお知らせください。推奨定員は8名様、9〜10名様は事前にご相談ください。</p>
       <p>・当日割は公式サイトからの直接予約限定です。</p>
       <p>・Booking.comでは当日予約を受け付けていません。</p>
       <p>・空室状況によりご案内できない場合があります。</p>
-      <p>・対象期間：2026年10月1日〜2027年1月31日のご宿泊。連休・年末年始は対象外です。</p>
+      <p>・対象期間：2026年10月1日〜2027年1月31日の月〜金曜日（祝日・祝前日・連休・年末年始を除く）。</p>
       <p>・対象日・空室・受入準備をLINEで確認後、ご予約を確定します。</p>
     </div>
   </section>
@@ -69,13 +71,16 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
   const hour = Number(v.hour);
   const button = document.getElementById('reserveButton');
   const dateKey = `${v.year}-${v.month.padStart(2,'0')}-${v.day.padStart(2,'0')}`;
-  if(dateKey < '2026-10-01' || dateKey > '2027-01-31'){
-    document.getElementById('priceLabel').textContent='期間限定プラン・一棟1泊・8名様まで';
-    document.getElementById('statusText').textContent='本日は対象期間外です。対象期間：2026年10月1日〜2027年1月31日（連休・年末年始を除く）';
-    button.textContent='LINEでプランについて問い合わせる';
+  const isWeekend = v.weekday === '土' || v.weekday === '日';
+  if(dateKey < '2026-10-01' || dateKey > '2027-01-31' || isWeekend){
+    document.getElementById('priceLabel').textContent='平日当日割の対象外';
+    document.getElementById('priceValue').textContent='対象外';
+    document.getElementById('latePrice').textContent='平日の空室日に限る特別プランです。通常プランはお問い合わせください。';
+    document.getElementById('statusText').textContent='対象期間：2026年10月〜2027年1月の平日（祝日・祝前日・連休・年末年始を除く）';
+    button.textContent='LINEで通常プランを問い合わせる';
   } else if(hour >= 22){
     document.getElementById('priceLabel').textContent='本日の受付は終了しました';
-    document.getElementById('priceValue').innerHTML='受付終了';
+    document.getElementById('priceValue').textContent='受付終了';
     document.getElementById('latePrice').textContent='翌日のご予約は通常予約ページをご確認ください。';
     document.getElementById('statusText').textContent='当日割受付時間 0:00〜22:00';
     button.textContent='本日のLINE受付は終了しました';
@@ -83,6 +88,8 @@ a{color:inherit}.top{min-height:62vh;position:relative;color:#fff;display:flex;a
     button.setAttribute('aria-disabled','true');
     button.removeAttribute('href');
     button.removeAttribute('target');
+  } else {
+    document.getElementById('statusText').textContent='受付は本日22:00まで。祝日・祝前日・連休・年末年始および空室状況はLINEでご確認ください。';
   }
 })();
 </script>
