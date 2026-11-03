@@ -106,6 +106,11 @@ nav{
 .nav-links a{font-size:12px;letter-spacing:.1em;text-decoration:none;padding:9px 0;border-bottom:1px solid transparent}
 .nav-links a:hover{border-color:rgba(255,255,255,.85)}
 .nav-right{display:flex;align-items:center;gap:18px}
+.mobile-menu{display:none}
+.mobile-menu summary{cursor:pointer;list-style:none}
+.mobile-menu summary::-webkit-details-marker{display:none}
+.mobile-menu-panel{display:flex;flex-direction:column}
+.mobile-menu-panel a{text-decoration:none}
 .book-nav{background:linear-gradient(135deg,#d8b15a,#b78935);padding:14px 20px;text-decoration:none;text-align:center;min-width:135px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .book-nav small{display:block;font-size:9px;margin-top:3px;opacity:.9}
 .language{
@@ -432,6 +437,14 @@ footer{
   nav{grid-template-columns:1fr auto;padding:18px 5vw}
   .nav-links{display:none}
   .nav-right{gap:8px}
+  .mobile-menu{display:block}
+  .mobile-menu summary{border:1px solid rgba(255,255,255,.65);padding:11px 12px;font-size:15px;white-space:nowrap;background:rgba(12,28,17,.65)}
+  .mobile-menu summary span{font-size:11px;margin-left:4px}
+  .mobile-menu-panel{position:absolute;z-index:10;right:5vw;left:5vw;top:calc(100% - 4px);background:#172419;color:#fff;box-shadow:0 12px 25px rgba(0,0,0,.3);padding:12px 20px;max-height:70vh;overflow-y:auto}
+  .mobile-menu-panel > a{padding:13px 6px;border-bottom:1px solid rgba(255,255,255,.2);font-size:14px}
+  .mobile-menu-panel a:focus-visible,.mobile-menu summary:focus-visible{outline:2px solid #efd28a;outline-offset:3px}
+  .mobile-menu-langs{display:flex;gap:20px;flex-wrap:wrap;padding:16px 6px 6px;font-size:12px}
+  .mobile-menu-langs a{text-decoration:underline;text-underline-offset:3px}
   .book-nav{min-width:auto;padding:11px 12px;font-size:11px}
   .brand{gap:9px}
   .brand-logo{width:66px;height:44px}
@@ -551,8 +564,21 @@ footer{
       <a href="#amenities">設備・アメニティ</a>
       <a href="#gallery">ギャラリー</a>
       <a href="#access">アクセス</a>
+      <a href="#reservation">料金・予約</a>
     </div>
     <div class="nav-right">
+      <details class="mobile-menu">
+        <summary aria-label="メニューを開く">☰ <span>メニュー</span></summary>
+        <div class="mobile-menu-panel">
+          <a href="#top">トップ</a>
+          <a href="#floor">館内案内</a>
+          <a href="#amenities">設備・アメニティ</a>
+          <a href="#gallery">ギャラリー</a>
+          <a href="#access">アクセス</a>
+          <a href="#reservation">料金・予約</a>
+          <div class="mobile-menu-langs"><a href="index.html" lang="ja">日本語</a><a href="en.html" lang="en">English</a><a href="zh-tw.html" lang="zh-Hant">繁體中文</a></div>
+        </div>
+      </details>
       <a class="book-nav" href="https://www.booking.com/Share-i6wj1x" target="_blank" rel="noopener">ご予約<small>Booking.com</small></a>
       <div class="language">
         <a href="index.html">JP</a><a href="en.html">EN</a><a href="zh-tw.html">繁體</a>
@@ -770,7 +796,7 @@ footer{
   </div>
 </section>
 
-<section class="reserve">
+<section class="reserve" id="reservation">
   <div class="reveal">
     <p class="kicker">RESERVATION</p>
     <h2>心ほどける休日を、<br>南伊豆で。</h2>
