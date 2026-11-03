@@ -88,13 +88,40 @@ section{padding:80px 7vw}.split{grid-template-columns:1fr;min-height:auto}.split
 .access-grid{grid-template-columns:1fr}.access-photo{height:72vw}.facts{grid-template-columns:1fr}.reserve{padding:100px 7vw}footer{display:block;line-height:2}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.hero::before,.reveal{animation:none;transition:none}.reveal{opacity:1;transform:none}}
+
+.nav-controls{display:flex;align-items:center;gap:20px}
+.mobile-menu{display:none}
+.mobile-menu summary{cursor:pointer;list-style:none}
+.mobile-menu summary::-webkit-details-marker{display:none}
+.mobile-menu-panel a{text-decoration:none}
+.back-to-top{position:fixed;right:18px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:50;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.65);background:#203126;color:#fff;font-size:23px;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.24);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s,transform .2s,visibility .2s}
+.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.mobile-menu summary:focus-visible,.mobile-menu-panel a:focus-visible,.back-to-top:focus-visible{outline:2px solid #efd28a;outline-offset:3px}
+@media(max-width:820px){
+nav{align-items:center}
+.nav-controls>.language{display:none}
+.mobile-menu{display:block}
+.mobile-menu summary{border:1px solid rgba(255,255,255,.65);padding:11px 12px;font-size:13px;white-space:nowrap;background:rgba(12,28,17,.65)}
+.mobile-menu-panel{position:absolute;z-index:10;right:5vw;left:5vw;top:calc(100% - 4px);display:flex;flex-direction:column;background:#172419;color:#fff;box-shadow:0 12px 25px rgba(0,0,0,.3);padding:12px 20px;max-height:70vh;overflow-y:auto}
+.mobile-menu-panel > a{padding:13px 6px;border-bottom:1px solid rgba(255,255,255,.2);font-size:14px}
+.mobile-menu-langs{display:flex;gap:18px;flex-wrap:wrap;padding:16px 6px 6px;font-size:12px}
+.mobile-menu-langs a{text-decoration:underline;text-underline-offset:3px}
+}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
 </style>
 </head>
 <body>
-<header class="hero">
+<header class="hero" id="top">
 <nav>
 <div class="brand"><span class="brand-ja">貸別荘 YUME</span><span class="brand-en">YUME PRIVATE VILLA · MINAMI-IZU</span></div>
+<div class="nav-controls">
 <div class="language"><a href="index.html">日本語</a><a href="en.html">English</a><a href="zh-tw.html" class="active">繁體中文</a></div>
+<details class="mobile-menu">
+<summary aria-label="選單">☰ 選單</summary>
+<div class="mobile-menu-panel">
+<a href="#top">首頁</a><a href="#about">關於我們</a><a href="#gallery">相簿</a><a href="#access">交通資訊</a><a href="#reservation">房價・訂房</a>
+<div class="mobile-menu-langs"><a href="index.html">日本語</a><a href="en.html">English</a><a href="zh-tw.html">繁體中文</a></div>
+</div></details></div>
 </nav>
 <div class="hero-copy">
 <p class="eyebrow">南伊豆・一日一組限定包棟別墅</p>
@@ -105,7 +132,7 @@ section{padding:80px 7vw}.split{grid-template-columns:1fr;min-height:auto}.split
 <span class="scroll">SCROLL</span>
 </header>
 
-<section class="intro reveal">
+<section class="intro reveal" id="about">
 <p class="kicker">YUME 的故事</p>
 <h2>只有這裡才有的，<br>一份寧靜。</h2>
 <p>「貸別荘 YUME」是一棟被南伊豆豐富自然環抱的包棟住宿。寬敞的單層建築約180平方公尺，設有3間和室及1間西式臥室。清晨在鳥鳴中醒來，夜晚看著庭園燈光，享受什麼都不做的奢侈。</p>
@@ -129,7 +156,7 @@ section{padding:80px 7vw}.split{grid-template-columns:1fr;min-height:auto}.split
 <img src="tatami-room.jpg" alt="布団を敷いた広い和室">
 </div>
 
-<section class="gallery-section">
+<section class="gallery-section" id="gallery">
 <div class="gallery-head reveal">
 <div><p class="kicker">住宿空間與細節</p><h2>在 YUME 度過的時光</h2></div>
 <p>寬敞的餐廳與廚房、沉穩的西式臥室，以及多年來被珍惜使用的家具與器皿。這棟房子的舒適，不只來自嶄新設備，也來自被保留下來的歲月感。</p>
@@ -145,7 +172,7 @@ section{padding:80px 7vw}.split{grid-template-columns:1fr;min-height:auto}.split
 </div>
 </section>
 
-<section class="access">
+<section class="access" id="access">
 <div class="access-wrap">
 <div class="access-grid reveal">
 <div>
@@ -164,7 +191,7 @@ section{padding:80px 7vw}.split{grid-template-columns:1fr;min-height:auto}.split
 </div>
 </section>
 
-<section class="reserve">
+<section class="reserve" id="reservation">
 <div class="reveal">
 <p class="kicker">訂房</p>
 <h2>在南伊豆，<br>享受放鬆身心的假期。</h2>
@@ -174,10 +201,21 @@ section{padding:80px 7vw}.split{grid-template-columns:1fr;min-height:auto}.split
 </section>
 
 <footer><span>貸別荘 YUME</span><span>© YUME PRIVATE VILLA · MINAMI-IZU</span></footer>
+<button type="button" id="back-to-top" class="back-to-top" aria-label="返回頂部" title="返回頂部">↑</button>
 
 <script>
 const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");observer.unobserve(entry.target)}})},{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+<script>
+(function(){
+const button=document.getElementById('back-to-top');
+const update=()=>button.classList.toggle('is-visible',window.scrollY>500);
+window.addEventListener('scroll',update,{passive:true});
+button.addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
+document.querySelectorAll('.mobile-menu-panel a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const menu=a.closest('details');if(menu)menu.open=false;}));
+update();
+})();
 </script>
 </body>
 </html>
